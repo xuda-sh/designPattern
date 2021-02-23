@@ -1,5 +1,6 @@
 package com.example.designPattern.chain;
 
+import com.example.aspect.log.anno.AspectLog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,6 +16,7 @@ public class ChainTestController {
     @Resource
     private VerifyHandlerChain verifyHandlerChain;
 
+    @AspectLog
     @RequestMapping(value = "/test",method = RequestMethod.GET)
     public void test() {
         List<Object> params = new ArrayList<>();
